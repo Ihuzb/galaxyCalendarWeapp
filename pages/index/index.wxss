@@ -1,0 +1,86 @@
+/**index.wxss**/
+.index-flex {
+  width: 100%;
+  height: 150rpx;
+  font-size: 13px;
+  background: gray;
+}
+.index-wai{
+  display: flex;
+  height: 150rpx;
+  align-items: flex-end;
+  width: 260px;
+}
+
+.index-flex-content {
+  display: flex;
+  align-items: center;
+  flex: 2;
+}
+
+.index-flex-left {
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+.index-flex-go {
+  flex: 1;
+}
+
+.index-flex-len {
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+.index-flex-shi {
+  font-size: 16px;
+}
+
+.index-flex-dizhi {
+  font-size: 12px;
+}
+
+.index-row {
+  display: none;
+  width: 100%;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  position: fixed;
+  height: 150rpx;
+  background: gray;
+}
+
+.index-row-jw {
+  text-align: center;
+}
+
+.index-row-col1 view {
+  line-height: (118/2)rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%;
+}
+
+.calendar {
+  --calendar-height: 370px;
+}
+
+.calendar .van-calendar__header-title:empty+.van-calendar__header-title{
+  display: none!important;
+}
+
+.calendar .van-calendar__header-subtitle{
+  display: none;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "galaxycalendarweapp",
+  "version": "1.0.0",
+  "description": "银河日历小程序版",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ihuzb/galaxyCalendarWeapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ihuzb/galaxyCalendarWeapp/issues"
+  },
+  "homepage": "https://github.com/Ihuzb/galaxyCalendarWeapp#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.10.1"
+  }
+}
