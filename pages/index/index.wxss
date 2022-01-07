@@ -3,7 +3,7 @@
   width: 100%;
   height: 150rpx;
   font-size: 13px;
-  background: gray;
+  background: white;
 }
 .index-wai{
   display: flex;
@@ -55,9 +55,6 @@
   text-align: center;
 }
 
-.index-row-col1 view {
-  line-height: (118/2)rpx;
-}
 
 .userinfo {
   display: flex;
@@ -74,7 +71,10 @@
 }
 
 .calendar {
-  --calendar-height: 370px;
+  --calendar-height: 330px;
+  --calendar-selected-day-size:40px;
+  --calendar-selected-day-color:black;
+
 }
 
 .calendar .van-calendar__header-title:empty+.van-calendar__header-title{
@@ -83,4 +83,9 @@
 
 .calendar .van-calendar__header-subtitle{
   display: none;
+}
+
+.calendar .van-calendar__selected-day{
+  border: 1px solid gray;
+  background: none;
 }
