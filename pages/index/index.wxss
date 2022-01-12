@@ -1,9 +1,15 @@
 /**index.wxss**/
+.index-master {
+  background: #293044;
+  height: 100vh;
+}
+
 .index-flex {
   width: 100%;
   height: 170rpx;
   font-size: 26rpx;
-  background: white;
+  background: #293044;
+  color: white;
   position: fixed;
   z-index: 99999;
 }
@@ -78,14 +84,36 @@
   border-radius: 50%;
 }
 
+.calendar .van-calendar__day {
+  color: white;
+}
+
+.calendar .van-calendar__day.van-calendar__day--disabled {
+  color: gray;
+}
+
 .calendar {
   --calendar-height: 330px;
+  --calendar-background-color: #293044;
   --calendar-selected-day-size: 40px;
-  --calendar-selected-day-color: black;
+  --calendar-selected-day-color: white;
 }
-.index-main{
+
+.calendar .van-calendar__weekdays {
+  color: white;
+}
+
+.collapse {
+  --cell-background-color: #293044;
+  --collapse-item-content-background-color: #293044;
+  --cell-text-color: white;
+  --collapse-item-content-text-color: white;
+}
+
+.index-main {
   padding-top: 170rpx;
 }
+
 
 .calendar .van-calendar__header-title:empty+.van-calendar__header-title {
   display: none !important;
@@ -96,8 +124,11 @@
 }
 
 .calendar .van-calendar__selected-day {
-  border: 1px solid gray;
+  border: 1px solid white;
   background: none;
+}
+.calendar .van-calendar__month-title{
+  color: white;
 }
 
 .item-text {

@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view>
+<view class="index-master">
   <view class="index-flex">
     <view class="index-wai" bindtap="showMap">
       <view class="index-flex-content">
@@ -29,20 +29,20 @@
         </block>
       </view> -->
   <view class="index-main">
-    <van-calendar bind:confirm="onConfirm" max-date="{{maxDate}}" formatter="{{formatterInfo}}" row-height="50" poppable="{{ false }}" show-confirm="{{ false }}" class="calendar" />
+    <van-calendar show-mark="{{false}}" bind:confirm="onConfirm" max-date="{{maxDate}}" formatter="{{formatterInfo}}" row-height="50" poppable="{{ false }}" show-confirm="{{ false }}" class="calendar" />
     <view>
-      <van-collapse value="{{ activeNames }}" bind:change="onChange">
-        <van-collapse-item title="银河🌌" name="1">
+      <van-collapse  value="{{ activeNames }}" bind:change="onChange" class="collapse">
+        <van-collapse-item border='{{false}}' title="银河🌌" name="1">
           <view class="item-text">
             <text>{{galaxyInfo.TrueGalaxyTimes.hours||0}}小时</text>
             <text decode>&nbsp;&nbsp;{{direction}}</text>
             <view>{{galaxyInfo.TrueGalaxyTimes&&galaxyInfo.TrueGalaxyTimes.code=='1'?(galaxyInfo.TrueGalaxyTimes.start.date+' ~ '+galaxyInfo.TrueGalaxyTimes.end.date):''}}</view>
           </view>
         </van-collapse-item>
-        <van-collapse-item title="日升日落🌟" name="2">
+        <van-collapse-item border='{{false}}' title="日升日落🌟" name="2">
           <view class="item-text">{{galaxyInfo.Times?(galaxyInfo.Times.sunrise.date+' ~ '+galaxyInfo.Times.sunsetStart.date):''}}</view>
         </van-collapse-item>
-        <van-collapse-item title="月升月落{{moonPhase}}" name="3">
+        <van-collapse-item border='{{false}}' title="月升月落{{moonPhase}}" name="3">
           <view class="item-text">{{galaxyInfo.MoonTimes?(galaxyInfo.MoonTimes.rise.date+' ~ '+galaxyInfo.MoonTimes.set.date):''}}</view>
         </van-collapse-item>
       </van-collapse>

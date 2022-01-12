@@ -16,6 +16,7 @@ const qqmapsdk = new QQMapWX({
 Page({
   data: {
     motto: 'Hello World',
+    newDate: new Date(),
     moonPhase: '🌕',
     direction: '', // 方向
     userInfo: {},
@@ -38,7 +39,10 @@ Page({
       latitude,
       longitude
     } = this.data.location;
-    this.galaxy_time(event.detail, latitude, longitude)
+    this.galaxy_time(event.detail, latitude, longitude);
+    this.setData({
+      newDate: event.detail
+    })
   },
   setFormatterInfo({
     latitude = '',
@@ -73,6 +77,7 @@ Page({
           latitude,
           longitude
         } = res;
+        _this.galaxy_time(new Date(), latitude, longitude)
         // 设置日历自定义文案
         _this.setFormatterInfo({
           latitude,
@@ -145,7 +150,7 @@ Page({
     this.setData({
       galaxyInfo,
       moonPhase: formattingMoonPhase(phase),
-      direction: formattingGalaxyAzimuth(azimuth)
+      direction: formattingGalaxyAzimuth(azimuth, TrueGalaxyTimes.code)
     })
     console.log(galaxyInfo);
   },
@@ -157,6 +162,7 @@ Page({
         latitude,
         longitude
       } = location;
+      _this.galaxy_time(_this.data.newDate, latitude, longitude)
       // 设置日历自定义文案
       _this.setFormatterInfo({
         latitude,

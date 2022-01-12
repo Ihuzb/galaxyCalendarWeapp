@@ -10,7 +10,10 @@ module.exports = {
     formattingMoonPhase: (phase = 0) => {
         return phase >= 0.75 ? '🌗' : phase >= 0.5 ? '🌕' : phase >= 0.25 ? '🌓' : '🌑'
     },
-    formattingGalaxyAzimuth: (azimuth = 0) => {
+    formattingGalaxyAzimuth: (azimuth = 0, code = 0) => {
+        if (code == 0) {
+            return ''
+        }
         let trueAzimuth = azimuth + 180;
         switch (true) {
             case trueAzimuth >= 360 || trueAzimuth <= 0:
