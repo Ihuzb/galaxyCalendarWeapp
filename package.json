@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Ihuzb/galaxyCalendarWeapp#readme",
   "dependencies": {
-    "@vant/weapp": "^1.10.1"
+    "@vant/weapp": "^1.10.1",
+    "galaxy-time": "^1.0.16"
   }
 }

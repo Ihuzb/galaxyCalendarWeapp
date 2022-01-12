@@ -1,22 +1,23 @@
 <!--index.wxml-->
-<view class="container">
+<view>
   <view class="index-flex">
-    <view class="index-wai">
+    <view class="index-wai" bindtap="showMap">
       <view class="index-flex-content">
         <view class="index-flex-left">
           <van-icon name="location-o" />
         </view>
         <view>
           <view>
-            <text class="index-flex-shi">北京市</text>
-            <text class="index-flex-len">930303.3344</text>
+            <text class="index-flex-shi">{{location.province}}</text>
+            <text class="index-flex-len">{{location.latitude}} {{location.longitude}}</text>
           </view>
           <view>
-            <text class="index-flex-dizhi">海淀区公主坟魏翠广场</text>
+            <text class="index-flex-dizhi">
+              <text wx:if="{{location.city!=location.province}}">{{location.city}}</text>{{location.district}}{{location.name}}</text>
           </view>
         </view>
       </view>
-      <view class="index-flex-go">22222</view>
+      <!-- <view class="index-flex-go">22</view> -->
     </view>
   </view>
   <!-- <view class="userinfo">
@@ -27,8 +28,24 @@
           <open-data type="userNickName"></open-data>
         </block>
       </view> -->
-  <van-calendar formatter="{{formatterInfo}}" row-height="50" poppable="{{ false }}" show-confirm="{{ false }}" class="calendar" />
-  <view>
-
+  <view class="index-main">
+    <van-calendar bind:confirm="onConfirm" max-date="{{maxDate}}" formatter="{{formatterInfo}}" row-height="50" poppable="{{ false }}" show-confirm="{{ false }}" class="calendar" />
+    <view>
+      <van-collapse value="{{ activeNames }}" bind:change="onChange">
+        <van-collapse-item title="银河🌌" name="1">
+          <view class="item-text">
+            <text>{{galaxyInfo.TrueGalaxyTimes.hours||0}}小时</text>
+            <text decode>&nbsp;&nbsp;{{direction}}</text>
+            <view>{{galaxyInfo.TrueGalaxyTimes&&galaxyInfo.TrueGalaxyTimes.code=='1'?(galaxyInfo.TrueGalaxyTimes.start.date+' ~ '+galaxyInfo.TrueGalaxyTimes.end.date):''}}</view>
+          </view>
+        </van-collapse-item>
+        <van-collapse-item title="日升日落🌟" name="2">
+          <view class="item-text">{{galaxyInfo.Times?(galaxyInfo.Times.sunrise.date+' ~ '+galaxyInfo.Times.sunsetStart.date):''}}</view>
+        </van-collapse-item>
+        <van-collapse-item title="月升月落{{moonPhase}}" name="3">
+          <view class="item-text">{{galaxyInfo.MoonTimes?(galaxyInfo.MoonTimes.rise.date+' ~ '+galaxyInfo.MoonTimes.set.date):''}}</view>
+        </van-collapse-item>
+      </van-collapse>
+    </view>
   </view>
 </view>
